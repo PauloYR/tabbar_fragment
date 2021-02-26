@@ -34,7 +34,8 @@ class _HomeScreenState extends State<HomeScreen>
             appBar: AppBar(
               title: Text('Tab bar'),
             ),
-            bottomNavigationBar: Tabs(tabController: _tabController),
+            bottomNavigationBar:
+                SafeArea(child: Tabs(tabController: _tabController)),
             body: TabBarView(
               controller: _tabController,
               children: <Widget>[
