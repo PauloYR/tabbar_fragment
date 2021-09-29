@@ -3,11 +3,17 @@ import 'package:flutter/material.dart';
 import 'screen_one.dart';
 import 'screen_two.dart';
 
-class ScreenController extends StatelessWidget {
+class ScreenController extends StatefulWidget {
   final Function(BuildContext context) updateContext;
 
   const ScreenController({Key key, this.updateContext}) : super(key: key);
 
+  @override
+  _ScreenControllerState createState() => _ScreenControllerState();
+}
+
+class _ScreenControllerState extends State<ScreenController> 
+with AutomaticKeepAliveClientMixin<ScreenController> {
   @override
   Widget build(BuildContext context) {
     return Navigator(
@@ -15,7 +21,7 @@ class ScreenController extends StatelessWidget {
         return MaterialPageRoute(
             settings: settings,
             builder: (BuildContext context) {
-              updateContext(context);
+              widget.updateContext(context);
               switch (settings.name) {
                 case '/':
                   return ScreenOne();
@@ -28,4 +34,7 @@ class ScreenController extends StatelessWidget {
       },
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
