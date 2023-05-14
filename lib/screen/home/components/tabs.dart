@@ -2,18 +2,17 @@ import 'package:flutter/material.dart';
 
 class Tabs extends StatelessWidget {
   const Tabs({
-    Key key,
-    @required TabController tabController,
-  })  : _tabController = tabController,
-        super(key: key);
+    super.key,
+    required this.tabController,
+  });
 
-  final TabController _tabController;
+  final TabController tabController;
 
   @override
   Widget build(BuildContext context) {
     return TabBar(
       indicatorSize: TabBarIndicatorSize.tab,
-      controller: _tabController,
+      controller: tabController,
       tabs: [
         Icon(
           Icons.home,

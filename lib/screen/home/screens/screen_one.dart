@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ScreenOne extends StatefulWidget {
-  @override
-  _ScreenOneState createState() => _ScreenOneState();
-}
-
-class _ScreenOneState extends State<ScreenOne> {
+class ScreenOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(

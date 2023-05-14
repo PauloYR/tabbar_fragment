@@ -12,10 +12,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
-  BuildContext contextScreen;
-  Queue<BuildContext> _queue = Queue();
-  TabController _tabController;
-
+  final _queue = Queue();
+  late final TabController _tabController;
   final _lengthTabs = 3;
 
   @override
@@ -41,7 +39,6 @@ class _HomeScreenState extends State<HomeScreen>
               children: <Widget>[
                 ScreenController(
                   updateContext: (context) {
-                    contextScreen = context;
                     _queue.addLast(context);
                   },
                 ),
@@ -61,12 +58,10 @@ class _HomeScreenState extends State<HomeScreen>
     if (_tabController.index == 0 && _queue.isNotEmpty) {
       Navigator.of(_queue.removeLast()).pop();
       return _queue.length == 0;
-    }
-    if (_tabController.index != 0) {
+    } else if (_tabController.index != 0) {
       _tabController.index = 0;
       return false;
     }
-
     return true;
   }
 }
