@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+part of 'screen_main_page.dart';
 
-class ScreenTwo extends StatelessWidget {
+class ScreenTwoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

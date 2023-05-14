@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'home/home_screen.dart';
+import 'package:tab_bar_fragment/features/home/pages/home_page.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -10,7 +10,7 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: HomePage(),
     );
   }
 }

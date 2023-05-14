@@ -1,16 +1,15 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
-import 'package:tab_bar_fragment/screen/home/screens/screen_controller.dart';
+import 'package:tab_bar_fragment/features/home/widgets/tabs.dart';
+import 'package:tab_bar_fragment/features/screen/pages/screen_main_page.dart';
 
-import 'components/tabs.dart';
-
-class HomeScreen extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
+class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   final _queue = Queue();
   late final TabController _tabController;
@@ -37,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen>
             body: TabBarView(
               controller: _tabController,
               children: <Widget>[
-                ScreenController(
+                ScreenMainPage(
                   updateContext: (context) {
                     _queue.addLast(context);
                   },

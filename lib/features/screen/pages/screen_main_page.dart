@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-import 'screen_one.dart';
-import 'screen_two.dart';
+part 'screen_one_page.dart';
+part 'screen_two_page.dart';
 
-class ScreenController extends StatefulWidget {
+class ScreenMainPage extends StatefulWidget {
   final Function(BuildContext context)? updateContext;
 
-  const ScreenController({super.key, this.updateContext});
+  const ScreenMainPage({super.key, this.updateContext});
 
   @override
-  _ScreenControllerState createState() => _ScreenControllerState();
+  _ScreenMainPageState createState() => _ScreenMainPageState();
 }
 
-class _ScreenControllerState extends State<ScreenController>
-    with AutomaticKeepAliveClientMixin<ScreenController> {
+class _ScreenMainPageState extends State<ScreenMainPage>
+    with AutomaticKeepAliveClientMixin<ScreenMainPage> {
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -25,11 +25,11 @@ class _ScreenControllerState extends State<ScreenController>
               if (widget.updateContext != null) widget.updateContext!(context);
               switch (settings.name) {
                 case '/':
-                  return ScreenOne();
+                  return ScreenOnePage();
                 case '/two':
-                  return ScreenTwo();
+                  return ScreenTwoPage();
                 default:
-                  return ScreenOne();
+                  return ScreenOnePage();
               }
             });
       },
