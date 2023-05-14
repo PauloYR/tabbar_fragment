@@ -12,10 +12,11 @@ class ScreenController extends StatefulWidget {
   _ScreenControllerState createState() => _ScreenControllerState();
 }
 
-class _ScreenControllerState extends State<ScreenController> 
-with AutomaticKeepAliveClientMixin<ScreenController> {
+class _ScreenControllerState extends State<ScreenController>
+    with AutomaticKeepAliveClientMixin<ScreenController> {
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Navigator(
       onGenerateRoute: (settings) {
         return MaterialPageRoute(

@@ -1,4 +1,4 @@
-package com.example.tab_bar_fragment
+package com.example.tab_fragment
 
 import io.flutter.embedding.android.FlutterActivity
 
